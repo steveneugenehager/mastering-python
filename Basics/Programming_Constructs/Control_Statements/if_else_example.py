@@ -2,27 +2,38 @@
 """
 Example if statements using the various comparison operators.
 """
+# v2 - added main() boilerplate. Added try/except for user input.
 
-print("Enter two integers. Program will tell you the relationships they satisfy.")
-a = int(input("Enter 1st integer: "))
-b = int(input("Enter 2nd integer: "))
+import sys
 
-if a == b:
-    print(a , "is equal to" , b)
-# Should use else as two numbers are either equal or not, but wanted to show the != (not equal comparison operator)
-elif a != b:
-    print(a , "is not equal to" , b)
-# In this program a or b can't be "None".  Adding this section to demonstrate the else
-else:
-    print(a , "or" , b , "must be null")
+def main():
+    print("Enter two integers. Program will tell you the relationships they satisfy.")
+    try:
+        a = int(input("Enter 1st integer: "))
+        b = int(input("Enter 2nd integer: "))
+    except ValueError:
+        print("Error: That's not a valid integer!")
+        sys.exit(1)  # Exit with status code 1 (error)
 
-if a <= b:
-    print(a , "is less than or equal to" , b)
-    if a < b:
-        print(a , "is less than" , b)
+    if a == b:
+        print(a , "is equal to" , b)
+    # Should use else as two numbers are either equal or not, but wanted to show the != (not equal comparison operator)
+    elif a != b:
+        print(a , "is not equal to" , b)
+    # In this program a or b can't be "None".  Adding this section to demonstrate the else
+    else:
+        print(a , "or" , b , "must be null")
 
-if a >= b:
-    print(a , "is greater than or equal to" , b)
-    if a > b:
-        print(a , "is greater than" , b)
+    if a <= b:
+        print(a , "is less than or equal to" , b)
+        if a < b:
+            print(a , "is less than" , b)
 
+    if a >= b:
+        print(a , "is greater than or equal to" , b)
+        if a > b:
+            print(a , "is greater than" , b)
+
+
+if __name__ == "__main__":
+    main()
